@@ -1,7 +1,14 @@
 import codecs
+
+import pytest
 import viscii_codec
 
-viscii_codec.register()
+
+@pytest.fixture(scope="module", autouse=True)
+def register_codec():
+    viscii_codec.register()
+    yield
+    viscii_codec.unregister()
 
 
 source_data = (

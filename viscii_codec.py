@@ -82,3 +82,10 @@ def search_function(encoding):
 
 def register():
     codecs.register(search_function)
+
+
+def unregister():
+    try:
+        codecs.uunregister(search_function)
+    except AttributeError:
+        pass
