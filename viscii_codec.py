@@ -86,6 +86,6 @@ def register():
 
 def unregister():
     try:
-        codecs.uunregister(search_function)
+        codecs.unregister(search_function)
     except AttributeError:
         pass
