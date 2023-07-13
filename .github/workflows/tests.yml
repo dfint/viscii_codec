@@ -3,8 +3,19 @@ name: Tests
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - '**.py'
+      - '.github/workflows/tests.yml'
+    
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - '**.py'
+      - '.github/workflows/tests.yml'
 
 jobs:
   build:
